@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Hellow Blog
+title: Hello Blog
 subtitle: hellow bioway blog
 date: 2020-04-03
 author: WYB
 catalog: true
 tags:
-    -- Blog
+    Blog
 ---
 
 > Hello bioway blog
