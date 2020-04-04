@@ -5,7 +5,7 @@ subtitle: 利用PicGo软件搭建存储地址在github的图床
 date: 2020-04-04
 author: WYB
 header-img: img/post-bg-2015.jpg
-catlog: true
+catalog: true
 tags: 
     - Blog
     - github
@@ -14,6 +14,7 @@ tags:
 
 # 利用PicGo搭建github图床
 > 搭建在线图床平台，提升Markdown的写作效率。
+
 ## Github 仓库配置
 ### 创建新github仓库
 创建一个新的github仓库，用来存放图片
