@@ -172,3 +172,32 @@ tags:
 
 
 
+## 在本地调试博客
+> 在本地调试博客，免去频繁推送到github
+
+运用`jekyll`可以建立本地网页
+`jekyll`官网提供的实例
+
+```bash
+gem install jekyll bundler
+jekyll new my-awesome-site
+cd my-awesome-site
+bundle install
+bundle exec jekyll serve
+# 打开浏览器http://localhost:4000
+```
+然而 jekyll需要ruby，比较难装，可以选择用[`docker`](https://github.com/envygeeks/jekyll-docker/blob/master/README.md)容器替代。
+
+- 进入博客目录
+- `vim jekyll.sh`
+```bash
+cp -r /public1/home/stu_wangyibin/code/wangyibin.github.io/* /srv/jekyll
+jekyll s
+```
+- 运行 `docker` 命令
+```bash
+docker run --rm -p 4000:4000 --volume="$PWD:$PWD" -it jekyll/jekyll:3.8 sh $PWD/jekyll.sh
+```
+
+- 打开浏览器，登入`http://localhost:4000`
+![](https://cdn.jsdelivr.net/gh/wangyibin/cloudimg/img/20200405093745.png)
