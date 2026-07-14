@@ -5,7 +5,9 @@ tags:
   - Computational biology
   - Genomics
   - Open source
-external_link: "/CPhasing"
+links:
+  - type: site
+    url: "/CPhasing"
 ---
 
 C-Phasing is the featured project for this portfolio. Replace this placeholder with the real project description, key capabilities, documentation links, and citation information.
