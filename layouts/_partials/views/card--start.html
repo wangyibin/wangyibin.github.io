@@ -1,0 +1,2 @@
+{{ $columns := .config.columns | default 1 }}
+<div class="container mx-auto grid grid-cols-1 gap-6 my-5 {{ if eq $columns 1 }}max-w-[65ch]{{ else if eq $columns 2 }}max-w-6xl md:grid-cols-2{{ else }}max-w-7xl md:grid-cols-2 lg:grid-cols-3{{ end }}">

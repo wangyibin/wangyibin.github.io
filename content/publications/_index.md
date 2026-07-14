@@ -1,6 +1,8 @@
 ---
 title: Publications
-summary: Placeholder publication index prepared for future papers, BibTeX entries, and DOI metadata.
+summary: Selected publications and research articles.
+view: citation
+columns: 1
 ---
 
-Placeholder publications page. Add real publication entries when available.
+Selected publications and research articles.

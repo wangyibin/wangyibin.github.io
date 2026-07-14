@@ -8,10 +8,7 @@ sections:
   - block: resume-biography-3
     content:
       username: me
-      text: 'Placeholder introduction for a project-first academic portfolio. Replace this with a concise description of your research, software, and current role.'
-      button:
-        text: View CV
-        url: cv/
+      text: 'I am a PhD candidate at the Huazhong Agricultural University, jointly trained at the Agricultural Genomics Institute at Shenzhen, Chinese Academy of Sciences, where I develop computational methods for polyploid genome assembly and chromosome-scale haplotype reconstruction.'
       headings:
         about: ''
         education: 'Education'
@@ -29,22 +26,22 @@ sections:
   - block: markdown
     id: c-phasing
     content:
-      title: 'Featured Project'
-      subtitle: 'C-Phasing'
+      title: "Featured Research"
+      subtitle: "C-Phasing"
       text: |-
-        **C-Phasing** is the lead project for this portfolio.
+        [**C-Phasing**](https://github.com/wangyibin/CPhasing) is a chromosome-scale assembly framework for haplotype-resolved reconstruction of polyploid genomes using Hi-C and Pore-C data.
 
-        Placeholder summary for a computational biology or genomics project. Replace this copy with a concise explanation of what C-Phasing does, who it helps, and where visitors should go next.
+        It integrates graph algorithms, long-read sequencing, chromatin interaction data, and methylation information to improve chromosome reconstruction in complex genomes.
 
-        [Open C-Phasing](/CPhasing)
+        **[Learn more →](/projects/c-phasing/)**
     design:
-      columns: '1'
+      columns: "1"
 
   - block: collection
     id: projects
     content:
-      title: More Projects
-      text: 'Placeholder project cards for related research software, reproducible workflows, and open source tools.'
+      title: Project
+      text: 'Selected research software and methods.'
       filters:
         folders:
           - projects
@@ -53,50 +50,45 @@ sections:
       view: card
       columns: 3
 
-  - block: markdown
-    id: research
-    content:
-      title: 'Research Interests'
-      text: |-
-        Placeholder research interests:
+  # - block: markdown
+  #   id: research
+  #   content:
+  #     title: 'Research Interests'
+  #     text: |-
+  #       Placeholder research interests:
 
-        - Computational biology
-        - Bioinformatics
-        - Genomics
-        - Reproducible scientific software
-    design:
-      columns: '1'
+  #       - Computational biology
+  #       - Bioinformatics
+  #       - Genomics
+  #       - Reproducible scientific software
+  #   design:
+  #     columns: '1'
 
-  - block: markdown
-    id: experience-education
-    content:
-      title: 'Experience and Education'
-      text: |-
-        Placeholder section for experience and education. Replace this with real institutional roles, education history, and selected milestones.
-    design:
-      columns: '1'
+  # - block: markdown
+  #   id: experience-education
+  #   content:
+  #     title: 'Experience and Education'
+  #     text: |-
+  #       Placeholder section for experience and education. Replace this with real institutional roles, education history, and selected milestones.
+  #   design:
+  #     columns: '1'
 
   - block: collection
-    id: publications
+    id: recent-publications
     content:
-      title: Publications
-      text: 'Placeholder publications section. Add real publication pages, BibTeX files, or DOI metadata later.'
+      title: Recent Publications
+      count: 3
+      sort_by: Date
+      sort_ascending: false
       filters:
         folders:
           - publications
+      archive:
+        enable: true
+        text: All publications
+        link: publications/
     design:
-      view: citation
+      view: recent-citation
+      columns: 1
 
-  - block: markdown
-    id: contact
-    content:
-      title: Contact
-      text: |-
-        Placeholder contact details:
-
-        - Email: [your.email@example.com](mailto:your.email@example.com)
-        - GitHub: [your-github-username](https://github.com/your-github-username)
-        - Google Scholar and ORCID links can be added when available.
-    design:
-      columns: '1'
 ---

@@ -3,9 +3,8 @@ title: Contact
 summary: Placeholder contact page.
 ---
 
-Placeholder contact page.
 
-- Email: [your.email@example.com](mailto:your.email@example.com)
-- GitHub: [your-github-username](https://github.com/your-github-username)
-- Google Scholar: add your profile URL when available
-- ORCID: add your ORCID URL when available
+- Email: [yibinwang96@outlook.com](mailto:yibinwang96@outlook.com)
+- GitHub: [wangyibin](https://github.com/CPhasing)
+- Google Scholar: https://scholar.google.com/citations?hl=en&user=Tr4_AJEAAAAJ
+- ORCID: https://orcid.org/0000-0002-0781-3966

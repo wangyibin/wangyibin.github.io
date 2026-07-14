@@ -1,6 +1,8 @@
 ---
 title: Projects
-summary: Placeholder project index for research software and open source work.
+summary: Selected research software and methods.
+view: card
+columns: 2
 ---
 
-Placeholder project index. Replace this introduction with a short overview of your software, research workflows, and selected tools.
+Selected research software and methods.

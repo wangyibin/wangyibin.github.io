@@ -2,55 +2,71 @@ schema: hugoblox/author/v1
 slug: me
 is_owner: true
 name:
-  display: Your Name
-  given: Your
-  family: Name
+  display: Yibin Wang
+  given: Yibin
+  family: Wang
   alternate: ''
   pronunciation: ''
   pronouns: ''
 postnominals: []
 status:
   icon: ""
-role: Researcher and Open Source Developer
+role: PhD Candidate
 bio: |
-  Placeholder biography for a project-first academic portfolio. Replace this with a short description of your research focus, software projects, and current affiliation.
+  I am a PhD candidate at the Huazhong Agricultural University, jointly trained at the Agricultural Genomics Institute at Shenzhen, Chinese Academy of Sciences, where I develop computational methods for polyploid genome assembly and chromosome-scale haplotype reconstruction. 
 
 affiliations:
-  - name: Your Institution
-    url: ''
+  - name: Agricultural Genomics Institute at Shenzhen, Chinese Academy of Agricultural Sciences
+    url: 'https://agis.caas.cn/'
 
 links:
   - icon: at-symbol
-    url: mailto:your.email@example.com
+    url: mailto:yibinwang96@outlook.com
     label: Email
   - icon: brands/github
-    url: https://github.com/your-github-username
+    url: https://github.com/wangyibin
     label: GitHub
   - icon: academicons/google-scholar
-    url: ''
+    url: 'https://scholar.google.com/citations?hl=en&user=Tr4_AJEAAAAJ'
     label: Google Scholar
   - icon: academicons/orcid
-    url: ''
+    url: 'https://orcid.org/0000-0002-0781-3966'
     label: ORCID
 
 interests:
   - Computational biology
   - Bioinformatics
   - Genomics
-  - Reproducible scientific software
+  - Polyploid
 
 education:
-  - degree: Placeholder Degree
-    institution: Your Institution
-    start: 2020-09-01
-    end: 2024-06-30
+  - degree: PhD Bioinformatics
+    institution: Huazhong Agricultural University 
+    start: 2023-09-01
+    end: 2027-06-30
+    summary: |
+      Placeholder education entry. Replace with real degree, institution, dates, and summary.
+  - degree: MS Biology
+    institution: Fujian Agricultural and Forestry University 
+    start: 2018-09-01
+    end: 2021-06-30
+    summary: |
+      Placeholder education entry. Replace with real degree, institution, dates, and summary.
+  - degree: BS Bioengineering
+    institution: Fujian Agricultural and Forestry University 
+    start: 2013-09-01
+    end: 2017-06-30
     summary: |
       Placeholder education entry. Replace with real degree, institution, dates, and summary.
 
+
+
+
 experience:
-  - role: Placeholder Role
-    org: Your Organization
-    start: 2024-01-01
+  - role: Research Assistant
+    org: Agricultural Genomics Institute at Shenzhen, Chinese Academy of Agricultural Sciences
+    start: 2021-07-01
+    end: 2023-08-30
     summary: |
       Placeholder experience entry. Replace with real role, organization, dates, and responsibilities.
 
