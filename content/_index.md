@@ -29,7 +29,7 @@ sections:
       title: "Featured Research"
       subtitle: "C-Phasing"
       text: |-
-        [**C-Phasing**](https://github.com/wangyibin/CPhasing) is a chromosome-scale assembly framework for haplotype-resolved reconstruction of polyploid genomes using Hi-C and Pore-C data.
+        [**C-Phasing**](https://wangyibin.github.io/CPhasing) is a chromosome-scale assembly framework for haplotype-resolved reconstruction of polyploid genomes using Hi-C and Pore-C data.
 
         It integrates graph algorithms, long-read sequencing, chromatin interaction data, and methylation information to improve chromosome reconstruction in complex genomes.
 

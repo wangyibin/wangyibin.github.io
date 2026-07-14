@@ -3,20 +3,31 @@
 {{ $year := (time $year_value).Format "2006" }}
 {{ $pub := partial "functions/resolve_publication.html" $item }}
 {{ $authors := $item.Params.authors | default slice }}
+{{ $author_notes := $item.Params.author_notes | default slice }}
 {{ $author_count := len $authors }}
 {{ $shown_authors := slice }}
+{{ $shown_notes := slice }}
 {{ $profile_name := "Yibin Wang" }}
+{{ $profile_note := "" }}
 {{ $profile_in_first := false }}
 {{ $profile_in_rest := false }}
+{{ $has_author_note := false }}
 
 {{ range $i, $author := $authors }}
   {{ $is_profile := in (slice "yibin wang" "wang yibin") (lower $author) }}
+  {{ $note := "" }}
+  {{ if lt $i (len $author_notes) }}
+    {{ $note = index $author_notes $i }}
+  {{ end }}
+  {{ if $note }}{{ $has_author_note = true }}{{ end }}
   {{ if lt $i 3 }}
     {{ $shown_authors = $shown_authors | append $author }}
+    {{ $shown_notes = $shown_notes | append $note }}
     {{ if $is_profile }}{{ $profile_in_first = true }}{{ end }}
   {{ else if $is_profile }}
     {{ $profile_in_rest = true }}
     {{ $profile_name = $author }}
+    {{ $profile_note = $note }}
   {{ end }}
 {{ end }}
 
@@ -25,11 +36,13 @@
     {{ range $i, $author := $shown_authors -}}
       {{- if gt $i 0 }}, {{ end -}}
       {{- $is_profile := in (slice "yibin wang" "wang yibin") (lower $author) -}}
+      {{- $note := index $shown_notes $i -}}
       <span{{ if $is_profile }} class="font-bold text-gray-900 dark:text-white"{{ end }}>{{ $author }}</span>
+      {{- if $note -}}<sup class="ml-0.5 text-primary-700 dark:text-primary-300">*</sup>{{- end -}}
     {{- end -}}
     {{- if gt $author_count 3 -}}
       {{- if and (not $profile_in_first) $profile_in_rest -}}
-        , <span class="font-bold text-gray-900 dark:text-white">{{ $profile_name }}</span>, et al.
+        , <span class="font-bold text-gray-900 dark:text-white">{{ $profile_name }}</span>{{ if $profile_note }}<sup class="ml-0.5 text-primary-700 dark:text-primary-300">*</sup>{{ end }}, et al.
       {{- else -}}
         , et al.
       {{- end -}}
@@ -51,4 +64,7 @@
       {{ end }}
     {{ end }}
   </div>
+  {{ if $has_author_note }}
+    <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">* Equal contribution.</p>
+  {{ end }}
 </article>
