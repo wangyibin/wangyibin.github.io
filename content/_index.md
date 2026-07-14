@@ -1,127 +1,102 @@
 ---
-# Leave the homepage title empty to use the site title
 title: ''
-summary: ''
-date: 2022-10-24
+summary: 'Placeholder project-first academic portfolio.'
+date: 2026-07-14
 type: landing
 
 sections:
   - block: resume-biography-3
     content:
-      # Choose a user profile to display (a folder name within `content/authors/`)
       username: me
-      text: ''
-      # Show a call-to-action button under your biography? (optional)
+      text: 'Placeholder introduction for a project-first academic portfolio. Replace this with a concise description of your research, software, and current role.'
       button:
-        text: Download CV
-        url: uploads/resume.pdf
+        text: View CV
+        url: cv/
       headings:
         about: ''
-        education: ''
-        interests: ''
+        education: 'Education'
+        interests: 'Research Interests'
     design:
-      # Use the new Gradient Mesh which automatically adapts to the selected theme colors
       background:
         gradient_mesh:
           enable: true
-
-      # Name heading sizing to accommodate long or short names
       name:
-        size: md # Options: xs, sm, md, lg (default), xl
-
-      # Avatar customization
+        size: md
       avatar:
-        size: medium # Options: small (150px), medium (200px, default), large (320px), xl (400px), xxl (500px)
-        shape: circle # Options: circle (default), square, rounded
+        size: medium
+        shape: circle
+
   - block: markdown
+    id: c-phasing
     content:
-      title: '📚 My Research'
-      subtitle: ''
+      title: 'Featured Project'
+      subtitle: 'C-Phasing'
       text: |-
-        Use this area to speak to your mission. I'm a research scientist in the Moonshot team at DeepMind. I blog about machine learning, deep learning, and moonshots.
+        **C-Phasing** is the lead project for this portfolio.
 
-        I apply a range of qualitative and quantitative methods to comprehensively investigate the role of science and technology in the economy.
+        Placeholder summary for a computational biology or genomics project. Replace this copy with a concise explanation of what C-Phasing does, who it helps, and where visitors should go next.
 
-        Please reach out to collaborate 😃
+        [Open C-Phasing](/CPhasing)
     design:
       columns: '1'
+
   - block: collection
-    id: papers
+    id: projects
     content:
-      title: Featured Publications
+      title: More Projects
+      text: 'Placeholder project cards for related research software, reproducible workflows, and open source tools.'
       filters:
         folders:
-          - publications
-        featured_only: true
-    design:
-      view: article-grid
-      columns: 2
-  - block: collection
-    content:
-      title: Recent Publications
-      text: ''
-      filters:
-        folders:
-          - publications
+          - projects
         exclude_featured: false
+    design:
+      view: card
+      columns: 3
+
+  - block: markdown
+    id: research
+    content:
+      title: 'Research Interests'
+      text: |-
+        Placeholder research interests:
+
+        - Computational biology
+        - Bioinformatics
+        - Genomics
+        - Reproducible scientific software
+    design:
+      columns: '1'
+
+  - block: markdown
+    id: experience-education
+    content:
+      title: 'Experience and Education'
+      text: |-
+        Placeholder section for experience and education. Replace this with real institutional roles, education history, and selected milestones.
+    design:
+      columns: '1'
+
+  - block: collection
+    id: publications
+    content:
+      title: Publications
+      text: 'Placeholder publications section. Add real publication pages, BibTeX files, or DOI metadata later.'
+      filters:
+        folders:
+          - publications
     design:
       view: citation
-  - block: collection
-    id: talks
+
+  - block: markdown
+    id: contact
     content:
-      title: Recent & Upcoming Talks
-      filters:
-        folders:
-          - events
-    design:
-      view: card
-  - block: collection
-    id: news
-    content:
-      title: Recent News
-      subtitle: ''
-      text: ''
-      # Page type to display. E.g. post, talk, publication...
-      page_type: blog
-      # Choose how many pages you would like to display (0 = all pages)
-      count: 10
-      # Filter on criteria
-      filters:
-        author: ''
-        category: ''
-        tag: ''
-        exclude_featured: false
-        exclude_future: false
-        exclude_past: false
-        publication_type: ''
-      # Choose how many pages you would like to offset by
-      offset: 0
-      # Page order: descending (desc) or ascending (asc) date.
-      order: desc
-    design:
-      # Choose a layout view
-      view: card
-      # Reduce spacing
-      spacing:
-        padding: [0, 0, 0, 0]
-  - block: cta-card
-    demo: true # Only display this section in the HugoBlox Kit demo site
-    content:
-      title: 👉 Build your own academic website like this
+      title: Contact
       text: |-
-        This site is generated by HugoBlox Kit - the FREE, Hugo-based open source website builder trusted by 250,000+ academics like you.
+        Placeholder contact details:
 
-        <a class="github-button" href="https://github.com/HugoBlox/kit" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star HugoBlox/kit on GitHub">Star</a>
-
-        Easily build anything with blocks - no-code required!
-
-        From landing pages, second brains, and courses to academic resumés, conferences, and tech blogs.
-      button:
-        text: Get Started
-        url: https://hugoblox.com/templates/
+        - Email: [your.email@example.com](mailto:your.email@example.com)
+        - GitHub: [your-github-username](https://github.com/your-github-username)
+        - Google Scholar and ORCID links can be added when available.
     design:
-      card:
-        # Card background color (CSS class)
-        css_class: 'bg-gradient-to-br from-primary-500 via-primary-600 to-secondary-600 text-white shadow-2xl'
-        css_style: ''
+      columns: '1'
 ---

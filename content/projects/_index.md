@@ -1,22 +1,6 @@
 ---
-title: 'Projects'
-date: 2024-05-19
-type: landing
-
-# Page sections
-sections:
-  - block: collection
-    content:
-      title: Selected Projects
-      text: I enjoy making things. Here are a selection of projects that I have worked on over the years.
-      filters:
-        folders:
-          - projects
-    design:
-      view: article-grid
-      fill_image: false
-      columns: 3
-      show_date: false
-      show_read_time: false
-      show_read_more: false
+title: Projects
+summary: Placeholder project index for research software and open source work.
 ---
+
+Placeholder project index. Replace this introduction with a short overview of your software, research workflows, and selected tools.

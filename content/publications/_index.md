@@ -1,12 +1,6 @@
 ---
 title: Publications
-cms_exclude: true
-
-# View.
-view: citation
-
-# Optional header image (relative to `static/media/` folder).
-banner:
-  caption: ''
-  image: ''
+summary: Placeholder publication index prepared for future papers, BibTeX entries, and DOI metadata.
 ---
+
+Placeholder publications page. Add real publication entries when available.
