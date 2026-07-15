@@ -4,9 +4,13 @@
 {{ $pub := partial "functions/resolve_publication.html" $item }}
 {{ $authors := $item.Params.authors | default slice }}
 {{ $author_notes := $item.Params.author_notes | default slice }}
+{{ $corresponding_authors := $item.Params.corresponding_authors | default slice }}
 {{ $author_count := len $authors }}
 {{ $shown_authors := slice }}
 {{ $shown_notes := slice }}
+{{ $equal_authors := slice }}
+{{ $lead_authors := slice }}
+{{ $signature_authors := slice }}
 {{ $profile_name := "Yibin Wang" }}
 {{ $profile_note := "" }}
 {{ $profile_in_first := false }}
@@ -19,7 +23,10 @@
   {{ if lt $i (len $author_notes) }}
     {{ $note = index $author_notes $i }}
   {{ end }}
-  {{ if $note }}{{ $has_author_note = true }}{{ end }}
+  {{ if $note }}
+    {{ $has_author_note = true }}
+    {{ $equal_authors = $equal_authors | append $author }}
+  {{ end }}
   {{ if lt $i 3 }}
     {{ $shown_authors = $shown_authors | append $author }}
     {{ $shown_notes = $shown_notes | append $note }}
@@ -31,20 +38,52 @@
   {{ end }}
 {{ end }}
 
+{{ if or $equal_authors $corresponding_authors }}
+  {{ if $equal_authors }}
+    {{ $lead_authors = $equal_authors }}
+  {{ else }}
+    {{ $lead_authors = $shown_authors }}
+    {{ if and $profile_in_rest (not (in $lead_authors $profile_name)) }}
+      {{ $lead_authors = $lead_authors | append $profile_name }}
+    {{ end }}
+  {{ end }}
+  {{ range $lead_authors }}
+    {{ $signature_authors = $signature_authors | append (dict "name" . "equal" true "corresponding" (in $corresponding_authors .)) }}
+  {{ end }}
+  {{ range $corresponding_authors }}
+    {{ if not (in $lead_authors .) }}
+      {{ $signature_authors = $signature_authors | append (dict "name" . "equal" false "corresponding" true) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
 <article class="py-5">
   <p class="text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-    {{ range $i, $author := $shown_authors -}}
-      {{- if gt $i 0 }}, {{ end -}}
-      {{- $is_profile := in (slice "yibin wang" "wang yibin") (lower $author) -}}
-      {{- $note := index $shown_notes $i -}}
-      <span{{ if $is_profile }} class="font-bold text-gray-900 dark:text-white"{{ end }}>{{ $author }}</span>
-      {{- if $note -}}<sup class="ml-0.5 text-primary-700 dark:text-primary-300">*</sup>{{- end -}}
-    {{- end -}}
-    {{- if gt $author_count 3 -}}
-      {{- if and (not $profile_in_first) $profile_in_rest -}}
-        , <span class="font-bold text-gray-900 dark:text-white">{{ $profile_name }}</span>{{ if $profile_note }}<sup class="ml-0.5 text-primary-700 dark:text-primary-300">*</sup>{{ end }}, et al.
-      {{- else -}}
-        , et al.
+    {{ if $signature_authors -}}
+      {{- range $i, $author := $signature_authors -}}
+        {{- if gt $i 0 -}}
+          {{- if eq $i (len $lead_authors) -}}, ..., {{ else }}, {{ end -}}
+        {{- end -}}
+        {{- $name := $author.name -}}
+        {{- $is_profile := in (slice "yibin wang" "wang yibin") (lower $name) -}}
+        <span{{ if $is_profile }} class="font-bold text-gray-900 dark:text-white"{{ end }}>{{ $name }}</span>
+        {{- if and $author.equal $equal_authors -}}<sup class="ml-0.5 text-primary-700 dark:text-primary-300">#</sup>{{- end -}}
+        {{- if $author.corresponding -}}<sup class="ml-0.5 text-primary-700 dark:text-primary-300">*</sup>{{- end -}}
+      {{- end -}}
+    {{- else -}}
+      {{- range $i, $author := $shown_authors -}}
+        {{- if gt $i 0 }}, {{ end -}}
+        {{- $is_profile := in (slice "yibin wang" "wang yibin") (lower $author) -}}
+        {{- $note := index $shown_notes $i -}}
+        <span{{ if $is_profile }} class="font-bold text-gray-900 dark:text-white"{{ end }}>{{ $author }}</span>
+        {{- if $note -}}<sup class="ml-0.5 text-primary-700 dark:text-primary-300">#</sup>{{- end -}}
+      {{- end -}}
+      {{- if gt $author_count 3 -}}
+        {{- if and (not $profile_in_first) $profile_in_rest -}}
+          , <span class="font-bold text-gray-900 dark:text-white">{{ $profile_name }}</span>{{ if $profile_note }}<sup class="ml-0.5 text-primary-700 dark:text-primary-300">#</sup>{{ end }}, et al.
+        {{- else -}}
+          , et al.
+        {{- end -}}
       {{- end -}}
     {{- end }}
     ({{ $year }}).
@@ -64,7 +103,9 @@
       {{ end }}
     {{ end }}
   </div>
-  {{ if $has_author_note }}
-    <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">* Equal contribution.</p>
+  {{ if or $has_author_note $corresponding_authors }}
+    <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+      {{ if $has_author_note }}# Equal contribution{{ end }}{{ if and $has_author_note $corresponding_authors }}; {{ end }}{{ with $corresponding_authors }}* Corresponding authors{{ end }}.
+    </p>
   {{ end }}
 </article>

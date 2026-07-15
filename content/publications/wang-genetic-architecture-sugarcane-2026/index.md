@@ -97,6 +97,10 @@ author_notes:
 - ''
 - ''
 - ''
+corresponding_authors:
+- Muqing Zhang
+- Ray Ming
+- Xingtan Zhang
 publication_types:
 - '2'
 abstract: Sugarcane (Saccharum spp.) is a vital sugar and bioenergy crop with an exceptionally
@@ -118,8 +122,10 @@ abstract: Sugarcane (Saccharum spp.) is a vital sugar and bioenergy crop with an
   These findings clarify the genetic architecture underlying sugarcane’s biomass productivity
   and sugar yield, offering a genomic foundation for accelerating improvement in sugarcane
   and other polyploid crops critical for global food and bioenergy security.
-featured: false
-publication: '*Nature*'
+featured: true
+publication:
+  name: Nature
+  short_name: Nature
 tags:
 - Agricultural genetics
 - Genome informatics

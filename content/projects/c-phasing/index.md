@@ -8,9 +8,14 @@ tags:
   - Hi-C
   - Rust
 links:
-  - type: github
+  - name: GitHub
+    type: github
     icon: github
     url: "https://github.com/wangyibin/CPhasing"
+  - name: Nature paper
+    url: "/publications/wang-genetic-architecture-sugarcane-2026/"
+  - name: Bioinformatics paper
+    url: "/publications/wang-mike-ultrafast-assembly-2024/"
 ---
 
 ## Overview
@@ -35,4 +40,5 @@ C-Phasing has been evaluated across a diverse collection of polyploid genomes, i
 
 - Source code: https://github.com/wangyibin/CPhasing
 - Documentation: *https://wangyibin.github.io/CPhasing*
-- Manuscript: [Preprint](https://www.researchsquare.com/article/rs-7343323/v1)*(under submit)*
+- Latest Nature paper: [Genetic Architecture of Sugarcane Traits in a Polyploid Genomics Framework](/publications/wang-genetic-architecture-sugarcane-2026/)
+- Bioinformatics paper: [MIKE: An Ultrafast, Assembly-, and Alignment-Free Approach for Phylogenetic Tree Construction](/publications/wang-mike-ultrafast-assembly-2024/)

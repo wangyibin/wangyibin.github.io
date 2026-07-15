@@ -12,6 +12,8 @@ authors:
 - Jiaxin Yu
 - Dongxi Li
 - Xingtan Zhang
+corresponding_authors:
+- Xingtan Zhang
 publication_types:
 - '2'
 abstract: Constructing a phylogenetic tree requires calculating the evolutionary distance
@@ -27,8 +29,12 @@ abstract: Constructing a phylogenetic tree requires calculating the evolutionary
   samples. MIKE demonstrated accurate performance across varying evolutionary scales,
   reproductive modes, and ploidy levels, proving itself as a powerful tool for phylogenetic
   tree construction.MIKE is publicly available on Github at https://github.com/Argonum-Clever2/mike.git.
-featured: false
-publication: '*Bioinformatics*'
+featured: true
+publication:
+  name: Bioinformatics
+  short_name: Bioinformatics
 doi: 10.1093/bioinformatics/btae154
+links:
+- name: URL
+  url: https://doi.org/10.1093/bioinformatics/btae154
 ---
-

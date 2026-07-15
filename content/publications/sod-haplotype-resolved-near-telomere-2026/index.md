@@ -23,6 +23,9 @@ authors:
 - 'Qingchuan Yang'
 - 'Xingtan Zhang'
 - 'Ruicai Long'
+corresponding_authors:
+- 'Xingtan Zhang'
+- 'Ruicai Long'
 publication_types:
 - '2'
 abstract: ""
